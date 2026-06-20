@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main game container */
+.game {
+  background: rgb(226, 180, 180);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(232, 90, 90, 0.2);
+  text-align: center;
+}
+
+/* Status message */
+#status,
+.status {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #b95050;
+}
+
+/* Board */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 90px);
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Squares */
+.square {
+  width: 90px;
+  height: 90px;
+  border: none;
+  border-radius: 15px;
+  background: #c78484;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.square:hover:not(:disabled) {
+  background: #e8e8e8;
+  transform: translateY(-3px);
+}
+
+.square:active {
+  transform: scale(0.95);
+}
+
+/* X and O colors (optional) */
+.square:has-text("X") {
+  color: #3498db;
+}
+
+.square:has-text("O") {
+  color: #e74c3c;
+}
+
+/* Reset button */
+#reset {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#reset:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+#reset:active {
+  transform: scale(0.96);
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .board {
+    grid-template-columns: repeat(3, 75px);
+  }
+
+  .square {
+    width: 75px;
+    height: 75px;
+    font-size: 1.7rem;
+  }
+}
